@@ -1,0 +1,22 @@
+<h1>IRONHACK CINEMA</h1>
+<h2>What do you want to watch ?</h2>
+
+
+
+
+<button (click)="show()">Get all the movies</button>
+
+<ul>
+  <div class="flex">
+    <li *ngFor="let oneMovie of movieTruc.movies">
+      <div class="card" style="width: 18rem;">
+        <h3>Room : {{oneMovie.room}}</h3>
+
+        <img class="card-img-top" src="{{oneMovie.poster}}" alt="Card image cap">
+        <div class="card-body">
+          <a class="card-text" [routerLink]="['/movies', oneMovie.id]">{{oneMovie.title}}</a>
+        </div>
+      </div>
+    </li>
+  </div>
+</ul>
